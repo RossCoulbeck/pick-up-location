@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    var typingTimer;                //timer identifier  
+    var typingTimer; 
 
     $( "#pickupLocation" ).keyup(function() {
 
@@ -38,10 +38,8 @@ function searchUpdate(searchValue) {
         if (data.length) {
             searchResults = JSON.parse(data);
 
-            console.log(searchResults);
-
             $(searchResults.results.docs).each(function(){
-                console.log(this);
+
                 placeType = this.placeType;
                 name = this.name;
                 iata = this.iata;

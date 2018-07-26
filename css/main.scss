@@ -126,17 +126,36 @@ body {
 
 
 
-/* Media Queries */
-@media only screen and (min-width: 768px) and (max-width: 959px) /* iPad Portrait */
-{
-
+// Media Queries
+@media only screen and (max-width: 1140px) {
+    .pickUpSearch {
+        width: 75%;
+    }
 }
-@media only screen and (min-width: 480px) and (max-width: 767px) /* Mobile Landscape */
-{
-
+@media only screen and (max-width: 767px) {
+    .headerBanner {
+        padding-top: 54px;
+        padding-bottom: 179px;
+    }
 }
-@media only screen and (max-width: 479px) /* Mobile Portrait */
-{
-
+@media only screen and (max-width: 550px) {
+    .pickUpSearch {
+        width: 95%;
+    }
 }
-/* Media Queries End */
+@media only screen and (max-width: 450px) {
+    .pickUpSearch__title {
+        font-size: 1.5rem;
+    }
+    .liveResults__Block {
+        flex-direction: column;
+    }
+    .liveResults__placeTypeContainer {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .liveResults__locationInfo {
+        width: 100%;
+        text-align: center;
+    }
+}
