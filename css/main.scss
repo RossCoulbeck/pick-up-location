@@ -1,3 +1,75 @@
+// General 
+*, html, body {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.headerBanner {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 160px;
+    padding-bottom: 280px;
+}
+
+.headerBanner__title {
+    text-align: center;
+    font-size: 3.2rem;
+    color: #fff;
+}
+
+.pickUpSearch {
+    padding: 25px;
+    margin: -140px auto 0;
+    width: 38%;
+    background: #F3CE56;
+    border-bottom: 2px solid #DAB129;
+}
+
+.pickUpSearch__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.pickUpSearch__form {
+    color: #444;
+}
+
+.pickUpSearch__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pickUpSearch__location {
+    padding: 12px 40px 12px 10px;
+    width: 100%;
+    border-color: #a9a9a9;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.pickUpSearch__location--preloader {
+    background-image: url('../images/preloader.gif');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: right;
+}
+
+
+
+
+
+
+
+
 /* Media Queries */
 @media only screen and (min-width: 768px) and (max-width: 959px) /* iPad Portrait */
 {
