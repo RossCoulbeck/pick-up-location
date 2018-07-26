@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Rental Cars</title> <!--Web Page Title-->
+		<title>Rental Cars</title>
 
-		<meta charset="utf-8" /> <!--Character Encoding-->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!--Forces browsers to use latest rendering engine-->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-		<link rel="stylesheet" href="css/reset.css" /> <!--Reset Stylesheet Link-->
-		<link rel="stylesheet" href="css/main.css" /> <!--Stylesheet Link-->
-		<link rel="shortcut icon" href="images/favicon.ico"> <!--Favicon Link-->
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="shortcut icon" href="images/favicon.ico">
 
 		<!--Allows older browsers to use HTML5 elements-->
 		<!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
 		<![endif]-->
 
-		<!--Latest version of jQuery-->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	</head>
 	<body>
@@ -29,11 +28,14 @@
 
 				<div class="pickUpSearch__form">
 					<label for="pickupLocation" class="pickUpSearch__label">Pick-up Location</label>
-					<input type="search" id="pickupLocation" placeholder="city, airport, station, region, district..." class="pickUpSearch__location">
+					<input type="text" id="pickupLocation" placeholder="city, airport, station, region, district..." class="pickUpSearch__location">
+					<div class="liveResults"></div>
 				</div>
 				
 			</div>
 
 		</section>
+
+		<script src="js/main.js"></script>
 	</body>
 </html>
