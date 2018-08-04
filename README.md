@@ -1,5 +1,4 @@
 # Pick Up Location
-==============================
 
 An exercise to create a location search box which bring back live results as you type.
 
