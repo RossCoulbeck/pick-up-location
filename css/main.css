@@ -12,6 +12,14 @@ body {
   font-size: 14px;
 }
 
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 .headerBanner {
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
@@ -22,7 +30,6 @@ body {
 
 .headerBanner__title {
   text-align: center;
-  font-size: 3.2rem;
   color: #fff;
 }
 
@@ -35,7 +42,6 @@ body {
 }
 
 .pickUpSearch__title {
-  font-size: 2rem;
   margin-bottom: 20px;
 }
 

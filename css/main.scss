@@ -1,3 +1,10 @@
+// Variables 
+$bodyFontSize: 14px;
+$bodyFontFamily: Arial, Helvetica, sans-serif;
+
+$searchBoxBackground: #F3CE56;
+$searchBoxFormFontColor: #444;
+
 // General 
 *, html, body {
     box-sizing: border-box;
@@ -8,8 +15,16 @@ html, body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-family: $bodyFontFamily;
+    font-size: $bodyFontSize;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2rem;
 }
 
 // Body
@@ -23,7 +38,6 @@ body {
 
 .headerBanner__title {
     text-align: center;
-    font-size: 3.2rem;
     color: #fff;
 }
 
@@ -32,17 +46,16 @@ body {
     padding: 25px;
     margin: -140px auto 0;
     width: 38%;
-    background: #F3CE56;
+    background: $searchBoxBackground;
     border-bottom: 2px solid #DAB129;
 }
 
 .pickUpSearch__title {
-    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 .pickUpSearch__form {
-    color: #444;
+    color: $searchBoxFormFontColor;
 }
 
 .pickUpSearch__label {

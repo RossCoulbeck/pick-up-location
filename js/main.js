@@ -29,8 +29,8 @@ function submitSearch(input) {
 }
 
 function searchUpdate(searchValue) {
-    searchResults = {};
-    liveSearchHTML = "";
+    var searchResults = {};
+    var liveSearchHTML = "";
 
     $('.pickUpSearch__location').addClass('pickUpSearch__location--preloader');
 
@@ -38,34 +38,50 @@ function searchUpdate(searchValue) {
         if (data.length) {
             searchResults = JSON.parse(data);
 
-            $(searchResults.results.docs).each(function(){
-
-                placeType = this.placeType;
-                name = this.name;
-                iata = this.iata;
-                region = this.region;
-
-                
-                if (this.placeType == "C") {
-                    liveSearchHTML += '<div class="liveResults__Block"><div class="liveResults__placeTypeContainer"><span class="liveResults__placeType liveResults__placeType--city">City</span></div><div class="liveResults__locationInfo"><p class="liveResults__locationInfoTitle">' + name + '(' + iata + ')</p><p class="liveResults__locationInfoSubtitle">' + region + '</p></div></div>'
-                } else if (this.placeType == "T") {
-                    liveSearchHTML += '<div class="liveResults__Block"><div class="liveResults__placeTypeContainer"><span class="liveResults__placeType liveResults__placeType--station">Station</span></div><div class="liveResults__locationInfo"><p class="liveResults__locationInfoTitle">' + name + '</p><p class="liveResults__locationInfoSubtitle">' + region + '</p></div></div>'
-                } else if (this.placeType == "A") {
-                    liveSearchHTML += '<div class="liveResults__Block"><div class="liveResults__placeTypeContainer"><span class="liveResults__placeType liveResults__placeType--airport">Airport</span></div><div class="liveResults__locationInfo"><p class="liveResults__locationInfoTitle">' + name + '</p><p class="liveResults__locationInfoSubtitle">' + region + '</p></div></div>'
-                }
-            });
-
-            $('.pickUpSearch__location').removeClass('pickUpSearch__location--preloader');
-            $('.liveResults').html("");
-            $('.liveResults').show();
-            $('.liveResults').html(liveSearchHTML);
+            liveSearchHTML = buildSearchHTML(searchResults);
+            
+            noResultsFound(liveSearchHTML)
         } else {
-            $('.pickUpSearch__location').removeClass('pickUpSearch__location--preloader');
-            $('.liveResults').html("");
-            $('.liveResults').show();
-            $('.liveResults').html("<div class='liveResults__Block'>No results found</div>");
+            noResultsFound();
         }
           
     });
 
+}
+
+function buildSearchHTML(searchResults) {
+    var returnHTML = "";
+
+    $(searchResults.results.docs).each(function(){
+
+        placeType = this.placeType;
+        name = this.name;
+        iata = this.iata;
+        region = this.region;
+
+        
+        if (this.placeType == "C") {
+            returnHTML += '<div class="liveResults__Block"><div class="liveResults__placeTypeContainer"><span class="liveResults__placeType liveResults__placeType--city">City</span></div><div class="liveResults__locationInfo"><p class="liveResults__locationInfoTitle">' + name + '(' + iata + ')</p><p class="liveResults__locationInfoSubtitle">' + region + '</p></div></div>'
+        } else if (this.placeType == "T") {
+            returnHTML += '<div class="liveResults__Block"><div class="liveResults__placeTypeContainer"><span class="liveResults__placeType liveResults__placeType--station">Station</span></div><div class="liveResults__locationInfo"><p class="liveResults__locationInfoTitle">' + name + '</p><p class="liveResults__locationInfoSubtitle">' + region + '</p></div></div>'
+        } else if (this.placeType == "A") {
+            returnHTML += '<div class="liveResults__Block"><div class="liveResults__placeTypeContainer"><span class="liveResults__placeType liveResults__placeType--airport">Airport</span></div><div class="liveResults__locationInfo"><p class="liveResults__locationInfoTitle">' + name + '</p><p class="liveResults__locationInfoSubtitle">' + region + '</p></div></div>'
+        }
+    });
+
+    return returnHTML;
+}
+
+function resultsFound(liveSearchHTML) {
+    $('.pickUpSearch__location').removeClass('pickUpSearch__location--preloader');
+    $('.liveResults').html("");
+    $('.liveResults').show();
+    $('.liveResults').html(liveSearchHTML);    
+}
+
+function noResultsFound() {
+    $('.pickUpSearch__location').removeClass('pickUpSearch__location--preloader');
+    $('.liveResults').html("");
+    $('.liveResults').show();
+    $('.liveResults').html("<div class='liveResults__Block'>No results found</div>");
 }
